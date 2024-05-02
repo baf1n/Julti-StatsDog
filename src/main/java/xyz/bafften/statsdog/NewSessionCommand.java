@@ -1,4 +1,4 @@
-package xyz.bafften.runtracker;
+package xyz.bafften.statsdog;
 
 import xyz.duncanruns.julti.Julti;
 import xyz.duncanruns.julti.cancelrequester.CancelRequester;

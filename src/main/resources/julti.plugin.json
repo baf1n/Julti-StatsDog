@@ -1,6 +1,6 @@
 {
-  "name": "RunTracker",
-  "id": "julti-runtracker",
+  "name": "StatsDog",
+  "id": "julti-statsdog",
   "version": "${version}",
-  "initializer": "xyz.bafften.runtracker.RunTracker"
+  "initializer": "xyz.bafften.statsdog.StatsDogInit"
 }
