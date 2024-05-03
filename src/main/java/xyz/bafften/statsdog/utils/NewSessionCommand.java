@@ -1,15 +1,17 @@
-package xyz.bafften.statsdog;
+package xyz.bafften.statsdog.utils;
 
-import xyz.duncanruns.julti.Julti;
+import xyz.bafften.statsdog.RecordsManager;
+import xyz.bafften.statsdog.StatsDogInit;
+
 import xyz.duncanruns.julti.cancelrequester.CancelRequester;
 import xyz.duncanruns.julti.command.Command;
 import xyz.duncanruns.julti.util.ResetCounter;
-import org.apache.logging.log4j.Level;
 
+/** 新しいセッションにする(Entersなどをリセットする)コマンド */
 public class NewSessionCommand extends Command{
     @Override
     public String helpDescription() {
-        return "newsession - Start a new session. (=Sets the current number of resets, enters, etc. in the current session)";
+        return "newsession - Start a new session.";
     }
 
     @Override
@@ -31,6 +33,7 @@ public class NewSessionCommand extends Command{
     public void run(String[] args, CancelRequester cancelRequester) {
         ResetCounter.sessionCounter = 0;
         ResetCounter.updateFiles();
-        Julti.log(Level.INFO, "RunTracker: New session have started.");
+        RecordsManager.newSession();
+        StatsDogInit.infoLog("Start a new session.");
     }
 }
